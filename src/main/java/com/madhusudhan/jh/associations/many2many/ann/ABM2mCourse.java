@@ -23,7 +23,7 @@ public class ABM2mCourse {
     @JoinTable(name = "ABM2MSTUDENT_COURSE", // make the associations. Make sure you're defining
             joinColumns = {@JoinColumn(name = "COURSE_ID")}, // right relevant columns
             inverseJoinColumns = {@JoinColumn(name = "STUDENT_ID")}) // like different from original
-    Set<ABM2mStudent> aBM2mStudents = null;
+    private Set<ABM2mStudent> aBM2mStudents = null;
 
     public ABM2mCourse() {
     }
