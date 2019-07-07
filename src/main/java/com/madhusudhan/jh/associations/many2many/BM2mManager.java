@@ -42,6 +42,38 @@ public class BM2mManager {
         }
     }
 
+    private void findS(BM2mCourse bm2mCourse) { // find all students
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            System.out.println(bm2mCourse.getbM2MStudents());
+            tx.commit();
+        } catch (HibernateException ex) {
+            if (tx != null)
+                tx.rollback();
+            throw ex;
+        } finally {
+            session.close();
+        }
+    }
+
+    private void findC(BM2mStudent bm2mStudent) { // all students
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            System.out.println(bm2mStudent.getbM2MCourses());
+            tx.commit();
+        } catch (HibernateException ex) {
+            if (tx != null)
+                tx.rollback();
+            throw ex;
+        } finally {
+            session.close();
+        }
+    }
+
     public static void main(String[] args) {
         BM2mManager bM2MManager = new BM2mManager();
 
@@ -72,5 +104,10 @@ public class BM2mManager {
 
         bM2MCourse.setbM2MStudents(bM2MStudents);
         bM2MManager.persistM2mC(bM2MCourse);
+
+        System.out.println("Maggy's courses: ");
+        bM2MManager.findC(bM2MStudent3);
+        System.out.println("Math's students: ");
+        bM2MManager.findS(bM2MCourse);
     }
 }

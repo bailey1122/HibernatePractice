@@ -42,6 +42,38 @@ public class ABM2mManager {
         }
     }
 
+    private void findS(ABM2mCourse abm2mCourse) { // find all students
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            System.out.println(abm2mCourse.getStudents());
+            tx.commit();
+        } catch (HibernateException ex) {
+            if (tx != null)
+                tx.rollback();
+            throw ex;
+        } finally {
+            session.close();
+        }
+    }
+
+    private void findC(ABM2mStudent abm2mStudent) { // find all courses
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            System.out.println(abm2mStudent.getaBM2mAcourses());
+            tx.commit();
+        } catch (HibernateException ex) {
+            if (tx != null)
+                tx.rollback();
+            throw ex;
+        } finally {
+            session.close();
+        }
+    }
+
     public static void main(String[] args) {
         ABM2mManager aBM2MManager = new ABM2mManager();
 
@@ -76,5 +108,10 @@ public class ABM2mManager {
 
         aBM2MCourse.setStudents(aBM2mStudents); // set students by a Course
         aBM2MManager.persistAM2mC(aBM2MCourse); // persist the Course
+
+        System.out.println("Maggy's courses: ");
+        aBM2MManager.findC(aBM2mStudent3);
+        System.out.println("Math's students: ");
+        aBM2MManager.findS(aBM2MCourse);
     }
 }

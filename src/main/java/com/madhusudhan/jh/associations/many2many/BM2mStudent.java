@@ -72,4 +72,12 @@ public class BM2mStudent {
         result = 31 * result + (bM2MCourses != null ? bM2MCourses.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "BM2mStudent{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

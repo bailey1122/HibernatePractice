@@ -75,4 +75,12 @@ public class ABM2mStudent {
         result = 31 * result + (aBM2mAcourses != null ? aBM2mAcourses.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "ABM2mStudent{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
