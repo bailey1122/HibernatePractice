@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/JH</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection."></property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">1234</property>
+<!--        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>-->
+        <property name="dialect">org.hibernate.dialect.MySQL55Dialect</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="hbm2ddl.auto">update</property>
+        <property name="hibernate.show_sql">true</property>
+        <mapping resource="Movie.hbm.xml" />
+        <mapping resource="Trade.hbm.xml" />
+        <mapping resource="Car.hbm.xml"/>
+        <mapping resource="Showroom.hbm.xml"/>
+        <mapping resource="CarS.hbm.xml"/>
+        <mapping resource="ShowroomS.hbm.xml"/>
+        <mapping resource="CarM.hbm.xml"/>
+        <mapping resource="ShowroomM.hbm.xml"/>
+        <mapping resource="ShowroomA.hbm.xml"/>
+        <mapping resource="CarB.hbm.xml"/>
+        <mapping resource="ShowroomB.hbm.xml"/>
+        <mapping resource="CarI.hbm.xml"/>
+        <mapping resource="ShowroomI.hbm.xml"/>
+        <mapping resource="121Car.hbm.xml"/>
+        <mapping resource="121Engine.hbm.xml"/>
+        <mapping resource="121Car_2.hbm.xml"/>
+        <mapping resource="121Engine_2.hbm.xml"/>
+        <mapping resource="Actor12m.hbm.xml"/>
+        <mapping resource="Movie12m.hbm.xml"/>
+        <mapping resource="ActorB12m.hbm.xml"/>
+        <mapping resource="MovieB12m.hbm.xml"/>
+        <mapping resource="BM2mCourse.hbm.xml"/>
+        <mapping resource="BM2mStudent.hbm.xml"/>
+
+        <mapping class="com.madhusudhan.jh.annotations.CoursePK"/>
+        <mapping class="com.madhusudhan.jh.annotations.Course"/>
+        <mapping class="com.madhusudhan.jh.annotations.Employee"/>
+        <mapping class="com.madhusudhan.jh.annotations.Course2"/>
+        <mapping class="com.madhusudhan.jh.collections.list.ann.AnnShowroom"/>
+        <mapping class="com.madhusudhan.jh.collections.list.ann.AnnCar"/>
+        <mapping class="com.madhusudhan.jh.collections.list.ann.AnnJoinShowroom"/>
+        <mapping class="com.madhusudhan.jh.collections.list.ann.AnnJoinCar"/>
+        <mapping class="com.madhusudhan.jh.associations.one2one.ann.CarAnn121"/>
+        <mapping class="com.madhusudhan.jh.associations.one2one.ann.EngineAnn121"/>
+        <mapping class="com.madhusudhan.jh.associations.one2one.ann.CarPAnn121"/>
+        <mapping class="com.madhusudhan.jh.associations.one2one.ann.EnginePAnn121"/>
+        <mapping class="com.madhusudhan.jh.associations.one2one.ann.CarJAnn121"/>
+        <mapping class="com.madhusudhan.jh.associations.one2one.ann.EngineJAnn121"/>
+        <mapping class="com.madhusudhan.jh.associations.many2many.ann.ABM2mCourse"/>
+        <mapping class="com.madhusudhan.jh.associations.many2many.ann.ABM2mStudent"/>
+        <mapping class="com.madhusudhan.jh.associations.one2many.bi.AMovieB12m"/>
+        <mapping class="com.madhusudhan.jh.associations.one2many.bi.AActorB12m"/>
+        <mapping class="com.madhusudhan.jh.associations.one2many.AMovie12m"/>
+        <mapping class="com.madhusudhan.jh.associations.one2many.AActor12m"/>
+    </session-factory>
+</hibernate-configuration>

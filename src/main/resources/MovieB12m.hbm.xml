@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.madhusudhan.jh.associations.one2many.bi.MovieB12m" table="MOVIE_ONE2MANY_BI">
+        <id name="id" column="MOVIE_ID">
+            <generator class="native"/>
+<!--            <generator class="assigned"></generator>-->
+        </id>
+<!--        // inverse or the referencing side. A set side is inverse="true" by default-->
+        <property name="title" column="TITLE"/>
+        <set name="actorB12ms" table="ACTOR_ONE2MANY_BI" cascade="all">
+            <key column="MOVIE_ID" not-null="true"/>
+            <one-to-many class="com.madhusudhan.jh.associations.one2many.bi.ActorB12m"/>
+        </set>
+    </class>
+</hibernate-mapping>

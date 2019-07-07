@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.madhusudhan.jh.associations.one2one.Engine_2_121" table="ENGINE_V2">
+        <id name="id" column="ENGINE_ID">
+            <generator class="native"/>
+        </id>
+<!--        // hibernate bidirectional one to one mapping-->
+        <property name="size" column="SIZE"/>
+        <property name="make" column="MAKE"/>
+        <property name="model" column="MODEL"/>
+    </class>
+</hibernate-mapping>

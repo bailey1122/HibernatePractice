@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.madhusudhan.jh.associations.one2one.Car_2_121" table="CAR_V2">
+        <id name="id" column="CAR_ID">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="NAME"/>
+        <property name="color" column="COLOR"/>
+<!--        // hibernate bidirectional one to one mapping-->
+        <!-- the unique="true" makes this many-to-one
+        relationship as one-to-one.
+        This is very important setting for this strategy -->
+        <many-to-one name="engine_2_121" class="com.madhusudhan.jh.associations.one2one.Engine_2_121"
+                     column="engine_id"
+                     unique="true"
+                     cascade="save-update"/>
+    </class>
+</hibernate-mapping>

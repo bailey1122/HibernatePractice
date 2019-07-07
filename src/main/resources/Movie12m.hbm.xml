@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.madhusudhan.jh.associations.one2many.Movie12m" table="MOVIE_ONE2MANY">
+        <id name="id" column="MOVIE_ID">
+            <generator class="native"/>
+<!--            <generator class="assigned"></generator>-->
+        </id>
+<!--        // hibernate unidirectional one to many mapping. Not as efficient-->
+<!--        // as bidirectional. DON'T USE this type of associations 'cause-->
+<!--        // Hibernate might create unexpected tables and execute more SQL-->
+<!--        // statements than you expected. That happens 'cause you don't model-->
+<!--        // the relationship on the entity, which represents the to-many side-->
+<!--        // of relationship. So, use a bidirectional mapping.-->
+<!--        // not-null to fk 'cause we've already set movie pk-->
+        <property name="title" column="TITLE"/>
+        <set name="actor12ms" table="ACTOR_ONE2MANY" cascade="save-update">
+            <key column="MOVIE_ID" not-null="true"/>
+            <one-to-many class="com.madhusudhan.jh.associations.one2many.Actor12m"/>
+        </set>
+    </class>
+</hibernate-mapping>

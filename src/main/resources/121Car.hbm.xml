@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.madhusudhan.jh.associations.one2one.Car121" table="CAR">
+        <id name="id" column="CAR_ID">
+            <generator class="native"/>
+        </id>
+<!--        // hibernate unidirectional one to one mapping-->
+        <property name="name" column="NAME"/>
+        <property name="color" column="COLOR"/>
+        <one-to-one name="engine121" class="com.madhusudhan.jh.associations.one2one.Engine121" cascade="all"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.madhusudhan.jh.collections.bags.ShowroomB" table="SHOWROOM_BAGS">
+        <id name="id" column="SHOWROOM_ID">
+            <generator class="native"></generator>
+        </id>
+        <property name="manager" column="MANAGER"/>
+        <property name="location" column="LOCATION"/>
+        <bag name="cars" table="CARS_LIST" cascade="all">
+            <key column="SHOWROOM_ID"/>
+            <one-to-many class="com.madhusudhan.jh.collections.bags.CarB"/>
+        </bag>
+    </class>
+</hibernate-mapping>

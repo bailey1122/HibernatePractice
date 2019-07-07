@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.madhusudhan.jh.associations.many2many.BM2mCourse" table="BM2M_COURSE">
+        <id name="id" column="COURSE_ID">
+            <generator class="native"></generator>
+        </id>
+<!--        // hibernate many2many bidirectional mapping-->
+        <property name="title" column="TITLE"/>
+<!--        // FetchType.LAZY by default. It tells your persistence provider not to fetch the-->
+<!--        // associated entities from the database until you use them-->
+<!--        // Don't ues CascadeTypes Remove and All for many-to-many.-->
+        <set name="bM2MStudents" table="BM2MSTUDENT_COURSE" cascade="save-update">
+            <key column="COURSE_ID"/>
+            <many-to-many column="STUDENT_ID" class="com.madhusudhan.jh.associations.many2many.BM2mStudent"/>
+        </set>
+    </class>
+</hibernate-mapping>

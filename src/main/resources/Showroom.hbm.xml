@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.madhusudhan.jh.collections.list.Showroom" table="SHOWROOM_LIST">
+        <id name="id" column="SHOWROOM_ID">
+            <generator class="native"></generator>
+        </id>
+        <property name="manager" column="MANAGER"/>
+        <property name="location" column="LOCATION"/>
+        <list name="cars" table="CARS_LIST" cascade="all">
+<!--            you have to assume that there is no opposite side mapped to fk column. You need to add a not-null="true"-->
+            <key column="SHOWROOM_ID" not-null="true"/>
+            <index column="CAR_INDEX"/>
+            <one-to-many class="com.madhusudhan.jh.collections.list.Car"/>
+        </list>
+    </class>
+</hibernate-mapping>
