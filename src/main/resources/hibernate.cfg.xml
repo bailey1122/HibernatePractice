@@ -35,6 +35,8 @@
         <mapping resource="MovieB12m.hbm.xml"/>
         <mapping resource="BM2mCourse.hbm.xml"/>
         <mapping resource="BM2mStudent.hbm.xml"/>
+        <mapping resource="Person.hbm.xml"/>
+        <mapping resource="CashPerson.hbm.xml"/>
 
         <mapping class="com.madhusudhan.jh.annotations.CoursePK"/>
         <mapping class="com.madhusudhan.jh.annotations.Course"/>
