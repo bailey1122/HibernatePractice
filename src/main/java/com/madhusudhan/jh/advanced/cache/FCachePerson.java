@@ -2,13 +2,13 @@ package com.madhusudhan.jh.advanced.cache;
 
 // the first level caching, which available during the lifespan of that session
 // or in the conversations only. This caching is provided by default by the framework
-public class CashPerson {
+public class FCachePerson {
     private int id;
     private String firstName = null;
     private String lastName = null;
     private String nickName = null;
 
-    public CashPerson() {
+    public FCachePerson() {
     }
 
     public int getId() {

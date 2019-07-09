@@ -4,7 +4,6 @@
     <session-factory>
         <property name="connection.url">jdbc:mysql://localhost:3306/JH</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection."></property>
         <property name="connection.username">root</property>
         <property name="connection.password">1234</property>
 <!--        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>-->
@@ -12,6 +11,15 @@
         <property name="current_session_context_class">thread</property>
         <property name="hbm2ddl.auto">update</property>
         <property name="hibernate.show_sql">true</property>
+<!--        // hibernate second level cache properties-->
+<!--        // To configure ehcache, you need to do two steps:-->
+<!--        // configure Hibernate for second level caching-->
+<!--        // and specify the second level cache provider-->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+<!--        // configure query cache-->
+        <property name="hibernate.cache.use_query_cache">true</property>
+
         <mapping resource="Movie.hbm.xml" />
         <mapping resource="Trade.hbm.xml" />
         <mapping resource="Car.hbm.xml"/>
@@ -36,7 +44,8 @@
         <mapping resource="BM2mCourse.hbm.xml"/>
         <mapping resource="BM2mStudent.hbm.xml"/>
         <mapping resource="Person.hbm.xml"/>
-        <mapping resource="CashPerson.hbm.xml"/>
+        <mapping resource="FCachePerson.hbm.xml"/>
+
 
         <mapping class="com.madhusudhan.jh.annotations.CoursePK"/>
         <mapping class="com.madhusudhan.jh.annotations.Course"/>
@@ -58,5 +67,9 @@
         <mapping class="com.madhusudhan.jh.associations.one2many.bi.AActorB12m"/>
         <mapping class="com.madhusudhan.jh.associations.one2many.AMovie12m"/>
         <mapping class="com.madhusudhan.jh.associations.one2many.AActor12m"/>
+        <mapping class="com.madhusudhan.jh.advanced.cache.SCachePerson"/>
+        <mapping class="com.madhusudhan.jh.advanced.cache.collection.SCacheCDep"/>
+        <mapping class="com.madhusudhan.jh.advanced.cache.collection.SCacheCPerson"/>
+
     </session-factory>
 </hibernate-configuration>

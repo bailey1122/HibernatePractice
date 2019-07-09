@@ -3,7 +3,7 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.madhusudhan.jh.advanced.cache.CashPerson" table="CASH_PERSON">
+    <class name="com.madhusudhan.jh.advanced.cache.FCachePerson" table="F_CACHE_PERSON">
         <id name="id" column="PERSON_ID">
             <generator class="native"/>
         </id>
