@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.madhusudhan.jh.advanced.inheritance.s3.PersonI3" abstract="true">
+        <id name="id" column="EMPLOYEE_ID">
+<!--            // native is'nt allowed-->
+            <generator class="assigned"/>
+        </id>
+        <property name="name" column="NAME"/>
+        <union-subclass name="com.madhusudhan.jh.advanced.inheritance.s3.EmployeeI3" table="INHERITANCE_S3_EMPLOYEE">
+            <property name="role" column="ROLE"/>
+        </union-subclass>
+        <union-subclass name="com.madhusudhan.jh.advanced.inheritance.s3.ExecutiveI3" table="INHERITANCE_S3_EXECUTIVE">
+            <property name="bonus" column="BONUS"/>
+        </union-subclass>
+    </class>
+</hibernate-mapping>

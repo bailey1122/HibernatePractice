@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.madhusudhan.jh.advanced.inheritance.s1.EmployeeI1" table="INHERITANCE_S1_EMPLOYEE"
+           discriminator-value="EMPLOYEE">
+        <id name="id" column="EMPLOYEE_ID">
+            <generator class="native"/>
+        </id>
+        <discriminator column="DISCRIMINATOR" type="string"/>
+        
+        <property name="name" column="NAME"/>
+        <subclass name="com.madhusudhan.jh.advanced.inheritance.s1.ExecutiveI1"
+                  extends="com.madhusudhan.jh.advanced.inheritance.s1.EmployeeI1"
+                  discriminator-value="EXECUTIVE">
+                <property name="role" column="ROLE"/>
+        </subclass>
+    </class>
+</hibernate-mapping>

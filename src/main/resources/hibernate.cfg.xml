@@ -15,10 +15,10 @@
 <!--        // To configure ehcache, you need to do two steps:-->
 <!--        // configure Hibernate for second level caching-->
 <!--        // and specify the second level cache provider-->
-        <property name="hibernate.cache.use_second_level_cache">true</property>
-        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+<!--        <property name="hibernate.cache.use_second_level_cache">true</property>-->
+<!--        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>-->
 <!--        // configure query cache-->
-        <property name="hibernate.cache.use_query_cache">true</property>
+<!--        <property name="hibernate.cache.use_query_cache">true</property>-->
 
         <mapping resource="Movie.hbm.xml" />
         <mapping resource="Trade.hbm.xml" />
@@ -45,7 +45,9 @@
         <mapping resource="BM2mStudent.hbm.xml"/>
         <mapping resource="Person.hbm.xml"/>
         <mapping resource="FCachePerson.hbm.xml"/>
-
+        <mapping resource="EmployeeI1.hbm.xml"/>
+        <mapping resource="EmployeeI2.hbm.xml"/>
+        <mapping resource="PersonI3.hbm.xml"/>
 
         <mapping class="com.madhusudhan.jh.annotations.CoursePK"/>
         <mapping class="com.madhusudhan.jh.annotations.Course"/>
@@ -70,6 +72,13 @@
         <mapping class="com.madhusudhan.jh.advanced.cache.SCachePerson"/>
         <mapping class="com.madhusudhan.jh.advanced.cache.collection.SCacheCDep"/>
         <mapping class="com.madhusudhan.jh.advanced.cache.collection.SCacheCPerson"/>
+        <mapping class="com.madhusudhan.jh.advanced.inheritance.s1.ann.EmployeeI1A"/>
+        <mapping class="com.madhusudhan.jh.advanced.inheritance.s1.ann.ExecutiveI1A"/>
+        <mapping class="com.madhusudhan.jh.advanced.inheritance.s2.ann.EmployeeI2A"/>
+        <mapping class="com.madhusudhan.jh.advanced.inheritance.s2.ann.ExecutiveI2A"/>
+        <mapping class="com.madhusudhan.jh.advanced.inheritance.s3.ann.PersonI3A"/>
+        <mapping class="com.madhusudhan.jh.advanced.inheritance.s3.ann.EmployeeI3A"/>
+        <mapping class="com.madhusudhan.jh.advanced.inheritance.s3.ann.ExecutiveI3A"/>
 
     </session-factory>
 </hibernate-configuration>
