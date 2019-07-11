@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!--    // Filter by Make-->
+    <filter-def name="filterByMake">
+        <filter-param name="make" type="string"/>
+    </filter-def>
+
+<!--    // Filter by Color-->
+    <filter-def name="filterByColor">
+        <filter-param name="color" type="string"/>
+    </filter-def>
+    
+<!--    // Filter by Name-->
+    <filter-def name="filterByName">
+        <filter-param name="name" type="string"/>
+    </filter-def>
+
+<!--    // Filter by Make and Model-->
+    <filter-def name="filterByMakeAndModel">
+        <filter-param name="make" type="string"/>
+        <filter-param name="model" type="string"/>
+    </filter-def>
+    
+    <class name="com.madhusudhan.jh.advanced.filters.FCar" table="FILTERS_CAR">
+        <id name="id" column="CAR_ID">
+            <generator class="native"/>
+        </id>
+        <property name="color" column="COLOR"/>
+        <property name="name" column="NAME"/>
+        <property name="make" column="MAKE"/>
+        <property name="model" column="MODEL"/>
+
+        <filter name="filterByMake" condition="make = :make"/>
+    </class>
+</hibernate-mapping>

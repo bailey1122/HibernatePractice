@@ -48,6 +48,7 @@
         <mapping resource="EmployeeI1.hbm.xml"/>
         <mapping resource="EmployeeI2.hbm.xml"/>
         <mapping resource="PersonI3.hbm.xml"/>
+        <mapping resource="FCar.hbm.xml"/>
 
         <mapping class="com.madhusudhan.jh.annotations.CoursePK"/>
         <mapping class="com.madhusudhan.jh.annotations.Course"/>
