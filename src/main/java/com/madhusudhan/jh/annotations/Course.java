@@ -4,8 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="COURSE_ANNOTATION")
+// if you don't use @Table then hibernate consider that @Entity is your table name by default
+@Entity // allow you to access your table with the same name as the entity while writing HQL or JPQL
+// name of the table. Use the same name like an entity when naming @Entity
+@Table(name="COURSE_ANNOTATION") // or use this with no name @Entity
 public class Course {
     @Id
     private CoursePK id = null;

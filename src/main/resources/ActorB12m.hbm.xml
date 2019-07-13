@@ -9,13 +9,13 @@
 <!--            <generator class="assigned"></generator>-->
         </id>
 <!--        // hibernate bidirectional many to many mapping-->
-<!--        // the owning side. A set side is inverse="true" by default, so we gotta turn it off-->
+<!--        // the inverse side-->
         <property name="firstName" column="FIRST_NAME"/>
         <property name="lastName" column="LAST_NAME"/>
         <property name="shortName" column="SHORT_NAME"/>
 <!--        // inverse="false" here by parameters not-null="true" insert="false" update="false"-->
 <!--        // Hibernate ignores inverse="true", so we use. Turn off inverse this 'cause we're using bidirectional-->
         <many-to-one name="movieB12mS" column="MOVIE_ID" class="com.madhusudhan.jh.associations.one2many.bi.MovieB12m"
-                     not-null="true" insert="false" update="false"/>
+                     not-null="true" insert="false" update="false" />
     </class>
 </hibernate-mapping>

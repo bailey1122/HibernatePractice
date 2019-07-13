@@ -15,7 +15,7 @@ public class AActorB12m {
     private String lname = null;
     private String sname = null;
 
-    @ManyToOne()
+    @ManyToOne() // inverse side
 //    inverse="false" here by parameters updatable=false, nullable=false, insertable=false
     @JoinColumn(name = "MOVIE_ID", updatable = false, nullable = false,
             insertable = false)

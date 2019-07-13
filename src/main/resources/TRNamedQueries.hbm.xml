@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.madhusudhan.jh.hql.TRNamedQueries" table="TRNAMED_QUERIES">
+        <id name="id" column="TRAVEL_ID">
+            <generator class="native"/>
+        </id>
+        <property name="review" column="REVIEW"/>
+        <property name="title" column="TITLE"/>
+<!--        // named queries-->
+<!--        // using CDATA, so that the XML parser won't prompt error for some XML characters like '>', <' and etc-->
+        <query name="MAP_GET_TRAVEL_REVIEWS">
+            <![CDATA[ from com.madhusudhan.jh.hql.TRNamedQueries ]]>
+        </query>
+        <query name="MAP_GET_TRAVEL_REVIEWS_FOR_TITLE">
+        <![CDATA[ from com.madhusudhan.jh.hql.TRNamedQueries where review=:review ]]>
+        </query>
+    </class>
+</hibernate-mapping>

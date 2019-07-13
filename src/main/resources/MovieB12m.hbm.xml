@@ -8,9 +8,10 @@
             <generator class="native"/>
 <!--            <generator class="assigned"></generator>-->
         </id>
-<!--        // inverse or the referencing side. A set side is inverse="true" by default-->
+<!--        // hibernate bidirectional many to many mapping-->
+<!--        // the owning side-->
         <property name="title" column="TITLE"/>
-        <set name="actorB12ms" table="ACTOR_ONE2MANY_BI" cascade="all">
+        <set name="actorB12ms" table="ACTOR_ONE2MANY_BI" cascade="all" >
             <key column="MOVIE_ID" not-null="true"/>
             <one-to-many class="com.madhusudhan.jh.associations.one2many.bi.ActorB12m"/>
         </set>

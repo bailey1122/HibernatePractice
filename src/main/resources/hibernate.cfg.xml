@@ -49,6 +49,7 @@
         <mapping resource="EmployeeI2.hbm.xml"/>
         <mapping resource="PersonI3.hbm.xml"/>
         <mapping resource="FCar.hbm.xml"/>
+        <mapping resource="TRNamedQueries.hbm.xml"/>
 
         <mapping class="com.madhusudhan.jh.annotations.CoursePK"/>
         <mapping class="com.madhusudhan.jh.annotations.Course"/>
@@ -80,6 +81,7 @@
         <mapping class="com.madhusudhan.jh.advanced.inheritance.s3.ann.PersonI3A"/>
         <mapping class="com.madhusudhan.jh.advanced.inheritance.s3.ann.EmployeeI3A"/>
         <mapping class="com.madhusudhan.jh.advanced.inheritance.s3.ann.ExecutiveI3A"/>
+        <mapping class="com.madhusudhan.jh.hql.TravelReview"/>
 
     </session-factory>
 </hibernate-configuration>

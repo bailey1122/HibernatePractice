@@ -14,7 +14,7 @@ public class AMovieB12m {
     private int id;
     private String title = null;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL) // the owning side
     @JoinColumn(name = "MOVIE_ID", nullable = false)
     private Set<AActorB12m> aActorB12ms = null;
 
