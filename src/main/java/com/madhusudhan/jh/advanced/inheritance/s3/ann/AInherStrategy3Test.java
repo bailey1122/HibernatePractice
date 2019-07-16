@@ -42,9 +42,9 @@ public class AInherStrategy3Test {
     public static void main(String[] args) {
         AInherStrategy3Test aInherStrategy3Test = new AInherStrategy3Test();
 
-        EmployeeI3A employeeI3A = new EmployeeI3A("Barry Bumbles");
+        EmployeeI3A employeeI3A = new EmployeeI3A();
         employeeI3A.setRole("Director");
-        ExecutiveI3A executiveI3A = new ExecutiveI3A("Harry Dumbles");
+        ExecutiveI3A executiveI3A = new ExecutiveI3A();
         executiveI3A.setBonus(140.00);
 
         aInherStrategy3Test.persistInhEmp(employeeI3A);

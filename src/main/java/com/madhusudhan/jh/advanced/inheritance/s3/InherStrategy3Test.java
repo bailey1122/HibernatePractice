@@ -42,9 +42,9 @@ public class InherStrategy3Test {
     public static void main(String[] args) {
         InherStrategy3Test inherStrategy3Test = new InherStrategy3Test();
 
-        EmployeeI3 employeeI3 = new EmployeeI3("Barry Bumbles");
+        EmployeeI3 employeeI3 = new EmployeeI3();
         employeeI3.setRole("Director");
-        ExecutiveI3 executiveI3 = new ExecutiveI3("Harry Dumbles");
+        ExecutiveI3 executiveI3 = new ExecutiveI3();
         executiveI3.setBonus(100.00);
 
         inherStrategy3Test.persistInhEmp(employeeI3);

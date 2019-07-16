@@ -4,7 +4,7 @@ package com.madhusudhan.jh.advanced.inheritance.s3;
 // The base class
 public abstract class PersonI3 {
     private int id = 0;
-    private String name = null;
+    private String name = "Person name"; // this name'll be defined in both child tables
 
     public int getId() {
         return id;

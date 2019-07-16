@@ -11,7 +11,7 @@ public abstract class PersonI3A {
     @GeneratedValue() // the native identifier strategy isn't allowed here
     @Column(name = "EMPLOYEE_ID")
     private int id = 0;
-    private String name = null;
+    private String name = "Person name"; // this name'll be defined in both child tables
 
     public int getId() {
         return id;
