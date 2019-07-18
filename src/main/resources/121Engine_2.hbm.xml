@@ -8,6 +8,8 @@
             <generator class="native"/>
         </id>
 <!--        // hibernate bidirectional one to one mapping-->
+        <one-to-one name="car_2_121" class="com.madhusudhan.jh.associations.one2one.Car_2_121"
+        property-ref="engine_2_121"/>
         <property name="size" column="SIZE"/>
         <property name="make" column="MAKE"/>
         <property name="model" column="MODEL"/>

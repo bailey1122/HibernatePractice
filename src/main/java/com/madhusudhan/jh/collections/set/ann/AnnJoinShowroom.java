@@ -1,4 +1,4 @@
-package com.madhusudhan.jh.collections.list.ann;
+package com.madhusudhan.jh.collections.set.ann;
 
 import org.hibernate.annotations.Cascade;
 

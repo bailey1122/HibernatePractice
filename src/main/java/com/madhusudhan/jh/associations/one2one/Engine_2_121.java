@@ -7,6 +7,8 @@ public class Engine_2_121 {
     private String model = null;
     private String size = null;
 
+    private Car_2_121 car_2_121 = null;
+
     public Engine_2_121() {
     }
 
@@ -42,4 +44,11 @@ public class Engine_2_121 {
         this.size = size;
     }
 
+    public Car_2_121 getCar_2_121() {
+        return car_2_121;
+    }
+
+    public void setCar_2_121(Car_2_121 car_2_121) {
+        this.car_2_121 = car_2_121;
+    }
 }

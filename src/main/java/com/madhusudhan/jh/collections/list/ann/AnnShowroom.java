@@ -19,6 +19,7 @@ public class AnnShowroom {
 
     @OneToMany
     @JoinColumn(name = "SHOWROOM_ID")
+    @OrderColumn(name = "CAR_INDEX")
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private List<AnnCar> cars = null;
 

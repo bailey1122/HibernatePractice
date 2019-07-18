@@ -1,4 +1,4 @@
-package com.madhusudhan.jh.collections.list.ann;
+package com.madhusudhan.jh.collections.set.ann;
 
 import com.madhusudhan.jh.HibernateUtil;
 import org.hibernate.HibernateException;
@@ -31,7 +31,7 @@ public class AnnJoinSCManager {
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            List list = session.createQuery("from com.madhusudhan.jh.collections.list.ann.AnnJoinShowroom").list();
+            List list = session.createQuery("from com.madhusudhan.jh.collections.set.ann.AnnJoinShowroom").list();
             for (Object object : list) {
                 System.out.println("List items: " + object);
             }
