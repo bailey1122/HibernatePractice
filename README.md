@@ -1,1 +1,1 @@
-The main topics of Hibernate
+The main topics of Hibernate.
